@@ -20,7 +20,7 @@ apt-get update -y
 apt-get install -y \
   build-essential git curl wget unzip pkg-config libssl-dev libffi-dev \
   zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev \
-  uuid-dev python3-venv python3-distutils python3-dev gcc make cmake \
+  uuid-dev python3-venv python3-dev gcc make cmake \
   openssl npm nodejs golang jq systemd libkrb5-dev libsasl2-dev \
   libldap2-dev libpq-dev libmariadb-dev-compat libmariadb-dev \
   default-libmysqlclient-dev libxml2-dev libxslt1-dev libjpeg-dev tk-dev \
