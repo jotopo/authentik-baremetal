@@ -38,9 +38,7 @@ The script will install missing packages automatically using apt-get.
 
 Run the installation script as a normal user (not root), the script uses sudo where required:
 
-`gh repo clone mintsalad/authentik-baremetal`
-`chmod +x install.sh`
-`./install.sh`
+`bash -c "$(curl -fsSL https://raw.githubusercontent.com/jotopo/authentik-baremetal/main/install.sh)`  
 
 The script performs the following:
 
