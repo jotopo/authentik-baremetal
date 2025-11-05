@@ -38,7 +38,9 @@ The script will install missing packages automatically using apt-get.
 
 Run the installation script as a normal user (not root), the script uses sudo where required:
 
-`bash -c "$(curl -fsSL https://raw.githubusercontent.com/jotopo/authentik-baremetal/main/install.sh)`  
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/jotopo/authentik-baremetal/main/install.sh)
+```  
 
 The script performs the following:
 
@@ -95,7 +97,9 @@ INSERT INTO authentik_core_user (
 
 Authentik uses argon2id hashes. You must generate one using the Authentik CLI:
 
-`/opt/authentik/.venv/bin/python -m authentik crypto hash-password 'YourPasswordHere'`
+```bash
+/opt/authentik/.venv/bin/python -m authentik crypto hash-password '{YourPasswordHere}'
+```
 
 Exit PostgreSQL:
 
@@ -120,13 +124,17 @@ The build output must exist at /opt/authentik/src/website/dist and /opt/authenti
 
 Enable and start services:
 
-`sudo systemctl enable authentik-server authentik-worker`
-`sudo systemctl start authentik-server authentik-worker`
+```
+sudo systemctl enable authentik-server authentik-worker
+sudo systemctl start authentik-server authentik-worker
+```
 
 Check Status:
 
-`sudo systemctl status authentik-server`
-`sudo systemctl status authentik-worker`
+```
+sudo systemctl status authentik-server
+sudo systemctl status authentik-worker
+```
 
 UFW/Firewall Rules:
 
