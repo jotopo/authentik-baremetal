@@ -16,8 +16,8 @@ export PATH="$BIN_DIR:$PATH"
 #############################################
 # 1. Prerequisites
 #############################################
-sudo apt-get update -y
-sudo apt-get install -y \
+apt-get update -y
+apt-get install -y \
   build-essential git curl wget unzip pkg-config libssl-dev libffi-dev \
   zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev \
   uuid-dev python3-venv python3-distutils python3-dev gcc make cmake \
@@ -85,8 +85,8 @@ GO_TAR="go${REQUIRED_GO}.linux-${ARCH}.tar.gz"
 if ! command -v go >/dev/null 2>&1 || [[ "$(go version | awk '{print $3}' | cut -c3-)" != "$REQUIRED_GO" ]]; then
     echo "[Go] Installing Go $REQUIRED_GO..."
     wget -q "https://go.dev/dl/${GO_TAR}" -O "$GO_TAR"
-    sudo rm -rf /usr/local/go
-    sudo tar -C /usr/local -xzf "$GO_TAR"
+    rm -rf /usr/local/go
+    tar -C /usr/local -xzf "$GO_TAR"
     rm -f "$GO_TAR"
 fi
 export PATH="/usr/local/go/bin:$PATH"
@@ -152,7 +152,7 @@ go build -o "$SRC_DIR/authentik-server" "$SRC_DIR/cmd/server/"
 #############################################
 # 11. Systemd services
 #############################################
-sudo tee /etc/systemd/system/authentik-server.service >/dev/null <<EOF
+tee /etc/systemd/system/authentik-server.service >/dev/null <<EOF
 [Unit]
 Description=Authentik Server (Web/API/SSO)
 
@@ -167,7 +167,7 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 
-sudo tee /etc/systemd/system/authentik-worker.service >/dev/null <<EOF
+tee /etc/systemd/system/authentik-worker.service >/dev/null <<EOF
 [Unit]
 Description=Authentik Worker (background tasks)
 
