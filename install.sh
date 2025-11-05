@@ -117,10 +117,10 @@ curl -sS https://bootstrap.pypa.io/get-pip.py | "$VENV/bin/python"
 # 8a. Patch django-dramatiq-postgres dependency
 #############################################
 PYPROJECT_FILE="$SRC_DIR/pyproject.toml"
-#if grep -q "django-dramatiq-postgres" "$PYPROJECT_FILE"; then
-#    echo "[Poetry] Patching django-dramatiq-postgres to use GitHub repository"
-#    sed -i 's|django-dramatiq-postgres|django-dramatiq-postgres = { git = "https://github.com/bmwant/django-dramatiq-postgres.git" }|' "$PYPROJECT_FILE"
-#fi
+# if grep -q "django-dramatiq-postgres" "$PYPROJECT_FILE"; then
+#     echo "[Poetry] Patching django-dramatiq-postgres to use GitHub repository"
+#     sed -i 's|django-dramatiq-postgres|django-dramatiq-postgres = { git = "https://github.com/bmwant/django-dramatiq-postgres.git" }|' "$PYPROJECT_FILE"
+# fi
 
 #############################################
 # 8b. Lock and install dependencies
