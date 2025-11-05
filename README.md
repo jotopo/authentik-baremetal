@@ -74,7 +74,9 @@ You can add users manually if needed (for example, to bootstrap an admin account
 
 Connect to the Authentik database:
 
+```bash
 sudo -u postgres psql -d authentik
+```
 
 Insert a new user (place values as needed)
 
