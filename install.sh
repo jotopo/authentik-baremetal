@@ -16,8 +16,19 @@ export PATH="$BIN_DIR:$PATH"
 #############################################
 # 1. Prerequisites
 #############################################
-apt-get update -y
-apt-get install -y \
+
+#    Python (3.13 or later)
+#    uv (Latest stable release)
+#    Go (1.24 or later)
+#    Node.js (24 or later)
+#    PostgreSQL (16 or later)
+#    Docker (Latest Community Edition or Docker Desktop)
+#    Docker Compose (Compose v2)
+#    Make (3 or later)
+
+
+sudo apt-get update -y
+sudo apt-get install -y \
   build-essential git curl wget unzip pkg-config libssl-dev libffi-dev \
   zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev \
   uuid-dev python3-venv python3-dev gcc make cmake \
@@ -116,7 +127,7 @@ curl -sS https://bootstrap.pypa.io/get-pip.py | "$VENV/bin/python"
 #############################################
 # 8a. Patch django-dramatiq-postgres dependency
 #############################################
-PYPROJECT_FILE="$SRC_DIR/pyproject.toml"
+# PYPROJECT_FILE="$SRC_DIR/pyproject.toml"
 # if grep -q "django-dramatiq-postgres" "$PYPROJECT_FILE"; then
 #     echo "[Poetry] Patching django-dramatiq-postgres to use GitHub repository"
 #     sed -i 's|django-dramatiq-postgres|django-dramatiq-postgres = { git = "https://github.com/bmwant/django-dramatiq-postgres.git" }|' "$PYPROJECT_FILE"
