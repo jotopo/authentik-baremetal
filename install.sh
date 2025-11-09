@@ -37,9 +37,14 @@ sudo apt-get install -y \
   default-libmysqlclient-dev libxml2-dev libxslt1-dev libjpeg-dev tk-dev \
   libgdbm-dev libncurses5-dev libncursesw5-dev
 
+if [ ! -d $BASE_DIR ]; then
+  mkdir -p $BASE_DIR;
+fi
+
 #############################################
 # 2. Disk space check (10 GB minimum)
 #############################################
+
 REQUIRED_MB=10240
 AVAILABLE_MB=$(df -Pm "$BASE_DIR" | awk 'NR==2 {print $4}')
 
